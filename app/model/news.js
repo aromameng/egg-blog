@@ -8,7 +8,7 @@ module.exports = app => {
     DATE,
   } = app.Sequelize;
 
-  const News = app.model.define('news', {
+  const News = app.model.define('blog', {
     id: {
       type: INTEGER,
       primaryKey: true,

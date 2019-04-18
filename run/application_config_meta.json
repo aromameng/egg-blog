@@ -198,7 +198,8 @@
       "egg-sequelize": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\config.default.js",
       "egg-view-nunjucks": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\config.default.js",
       "moment": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\config.default.js",
-      "mysql2": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\config.default.js"
+      "mysql2": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\config.default.js",
+      "sequelize-cli": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\config.default.js"
     }
   },
   "baseDir": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\config.default.js",

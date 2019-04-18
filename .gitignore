@@ -13,6 +13,7 @@
 
 /logs
 /app/_schedule
+/run
 
 # misc
 .DS_Store
