@@ -85,6 +85,9 @@
     "enable": "F:\\myStudy\\koa\\egg-example2\\config\\config.default.js",
     "package": "F:\\myStudy\\koa\\egg-example2\\config\\config.default.js"
   },
+  "notfound": {
+    "pageUrl": "F:\\myStudy\\koa\\egg-example2\\config\\config.default.js"
+  },
   "session": {
     "maxAge": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-session\\config\\config.default.js",
     "key": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-session\\config\\config.default.js",
@@ -214,9 +217,6 @@
     "sitefile": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\config.default.js",
     "middlewares": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\config.default.js",
     "httpClient": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\config.default.js"
-  },
-  "notfound": {
-    "pageUrl": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\config.default.js"
   },
   "siteFile": {
     "/favicon.ico": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\config.default.js"

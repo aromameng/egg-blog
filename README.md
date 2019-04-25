@@ -41,3 +41,4 @@ npx sequelize db:migrate
 ### 参考文档
 - [egg中文教程](https://eggjs.org/zh-cn/tutorials/index.html)
 - [Sequelize](https://eggjs.org/zh-cn/tutorials/sequelize.html)
+- [nunjucks官方文档](https://mozilla.github.io/nunjucks/cn/getting-started.html)

@@ -1,5 +1,10 @@
 const Controller = require('egg').Controller;
 
+function toInt(str) {
+  if (typeof str === 'number') return str;
+  if (!str) return str;
+  return parseInt(str, 10) || 0;
+}
 class NewsController extends Controller {
   async list() {
     const ctx = this.ctx;
@@ -15,6 +20,15 @@ class NewsController extends Controller {
     const created = await ctx.service.news.create(ctx.request.body);
     ctx.status = 201;
     ctx.body = created;
+  }
+  async detail(){
+    const ctx = this.ctx;
+    const id = toInt(ctx.params.id)
+    let res = await ctx.service.news.getNewDetail(id);
+    if(!res){
+      return
+    }
+    await ctx.render('news/detail.tpl', { info: res.data });
   }
 }
 

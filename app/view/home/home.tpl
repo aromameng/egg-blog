@@ -1,9 +1,8 @@
-<html>
-  <head>
-    <title>Hacker News</title>
-    <link rel="stylesheet" href="/public/css/news.css" />
-  </head>
-  <body>
-    <p>hello world !!!</p>
-  </body>
-</html>
+
+{% extends "../template/layout.tpl" %}
+{% block content %}
+<div class="home_page">
+  <p>hello world !!!</p>
+  <a href="/news">新闻列表页</a>
+</div>
+{% endblock %}

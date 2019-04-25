@@ -249,7 +249,7 @@
       "httpClient": "httpclient"
     },
     "notfound": {
-      "pageUrl": ""
+      "pageUrl": "/404.html"
     },
     "siteFile": {
       "/favicon.ico": "<Buffer len: 6463>"
@@ -342,7 +342,8 @@
       "serverUrl": "https://hacker-news.firebaseio.com/v0"
     },
     "middleware": [
-      "robot"
+      "robot",
+      "notfoundHandler"
     ],
     "robot": {
       "ua": [

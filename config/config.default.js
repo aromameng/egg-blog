@@ -13,7 +13,8 @@ exports.news = {
 };
 // add middleware robot
 exports.middleware = [
-  'robot'
+  'robot', 
+  'notfoundHandler',
 ];
 
 // robot's configurations
@@ -53,3 +54,8 @@ exports.cors = {
 //   // 每 10 秒执行一次
 //   interval: '20s',
 // }
+
+// 错误页面
+exports.notfound = {
+    pageUrl: '/404.html',
+}

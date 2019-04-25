@@ -9,3 +9,31 @@ li{
   line-height: 34px;
   padding-left: 10px;
 }
+
+.error_page{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f2f5;
+}
+.home_page{
+  padding: 20px;
+}
+.new_detail{
+  padding: 20px;
+}
+.new_detail .time{
+  color: #999;
+}
+.new_detail .summary{
+  font-style: italic;
+  color: #666;
+  margin: 10px 0;
+}
+.new_detail .content{
+  line-height: 24px;
+  padding: 10px 0;
+  text-indent: 2em;
+}

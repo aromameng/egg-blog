@@ -32,12 +32,24 @@ class NewsService extends Service {
         [ order_by, order.toUpperCase() ],
       ],
     };
-    console.log('=====', options)
+    // console.log('=====', options)
     const res = await this.ctx.model.News.findAndCountAll(options);
     return Object.assign(SUCCESS, {
       data: res,
     });
   }
+
+  async getNewDetail(blogId) {
+    const res = await this.ctx.model.News.findById(blogId)
+    if (!res) {
+      this.ctx.status = 404;
+      return;
+    }
+    return Object.assign(SUCCESS, {
+      data: res
+    })
+  }
+
   async getContent() {
     return {content: 'content11',}
   }
