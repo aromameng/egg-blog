@@ -3,7 +3,7 @@ exports.sequelize = {
   dialectOptions: {
     charset: 'utf8mb4',
   },
-  database: 'egg_db_production',
+  database: 'egg_db_test',
   host: 'localhost',
   port: '3306',
   username: 'root',

@@ -87,28 +87,28 @@
     "onerror": {
       "errorPageUrl": "",
       "appErrorFilter": null,
-      "templatePath": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-onerror\\lib\\onerror_page.mustache"
+      "templatePath": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-onerror\\lib\\onerror_page.mustache"
     },
     "i18n": {
       "defaultLocale": "en_US",
       "dirs": [
-        "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-session\\config\\locales",
-        "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-security\\config\\locales",
-        "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-jsonp\\config\\locales",
-        "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-onerror\\config\\locales",
-        "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-i18n\\config\\locales",
-        "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-watcher\\config\\locales",
-        "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-schedule\\config\\locales",
-        "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-multipart\\config\\locales",
-        "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-development\\config\\locales",
-        "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-logrotator\\config\\locales",
-        "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-static\\config\\locales",
-        "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-view\\config\\locales",
-        "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-view-nunjucks\\config\\locales",
-        "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-sequelize\\config\\locales",
-        "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-cors\\config\\locales",
-        "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\locales",
-        "F:\\myStudy\\koa\\egg-example2\\config\\locales"
+        "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-session\\config\\locales",
+        "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-security\\config\\locales",
+        "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-jsonp\\config\\locales",
+        "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-onerror\\config\\locales",
+        "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-i18n\\config\\locales",
+        "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-watcher\\config\\locales",
+        "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-schedule\\config\\locales",
+        "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-multipart\\config\\locales",
+        "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-logrotator\\config\\locales",
+        "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-static\\config\\locales",
+        "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-view\\config\\locales",
+        "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-view-nunjucks\\config\\locales",
+        "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-sequelize\\config\\locales",
+        "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-cors\\config\\locales",
+        "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-alinode\\config\\locales",
+        "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\locales",
+        "F:\\myStudy\\koa\\egg-blog\\config\\locales"
       ],
       "queryField": "locale",
       "cookieField": "locale",
@@ -116,10 +116,10 @@
       "functionName": "__"
     },
     "watcher": {
-      "type": "development",
+      "type": "default",
       "eventSources": {
-        "default": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-watcher\\lib\\event-sources\\default",
-        "development": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-watcher\\lib\\event-sources\\development"
+        "default": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-watcher\\lib\\event-sources\\default",
+        "development": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-watcher\\lib\\event-sources\\development"
       }
     },
     "customLogger": {
@@ -147,13 +147,6 @@
         "cron": "0 30 4 * * *"
       }
     },
-    "development": {
-      "watchDirs": [],
-      "ignoreDirs": [],
-      "fastReady": false,
-      "reloadOnDebug": true,
-      "overrideDefault": false
-    },
     "logrotator": {
       "filesRotateByHour": null,
       "hourDelimiter": "-",
@@ -165,17 +158,18 @@
     },
     "static": {
       "prefix": "/public/",
-      "dir": "F:\\myStudy\\koa\\egg-example2\\app\\public",
+      "dir": "F:\\myStudy\\koa\\egg-blog\\app\\public",
       "dynamic": true,
       "preload": false,
-      "buffer": false,
-      "maxFiles": 1000
+      "buffer": true,
+      "maxFiles": 1000,
+      "maxAge": 31536000
     },
     "view": {
       "root": [
-        "F:\\myStudy\\koa\\egg-example2\\app\\view"
+        "F:\\myStudy\\koa\\egg-blog\\app\\view"
       ],
-      "cache": false,
+      "cache": true,
       "defaultExtension": ".html",
       "defaultViewEngine": "nunjucks",
       "mapping": {
@@ -187,11 +181,11 @@
       "throwOnUndefined": false,
       "trimBlocks": false,
       "lstripBlocks": false,
-      "cache": false
+      "cache": true
     },
     "sequelize": {
       "dialect": "mysql",
-      "database": "egg_db_development",
+      "database": "egg_db_production",
       "host": "localhost",
       "port": "3306",
       "username": "root",
@@ -206,7 +200,25 @@
       "package": "egg-cors",
       "origin": "<Function corsOrigin>"
     },
-    "env": "local",
+    "alinode": {
+      "enable": true,
+      "server": "wss://agentserver.node.aliyun.com:8080",
+      "appid": "79200",
+      "secret": "<String len: 40>",
+      "cmddir": "F:\\myStudy\\koa\\egg-blog\\node_modules\\commandx",
+      "logdir": "C:\\Users\\UD\\logs\\alinode",
+      "error_log": [
+        "C:\\Users\\UD\\logs\\egg-blog\\common-error.log",
+        "C:\\Users\\UD\\logs\\stderr.log"
+      ],
+      "packages": [
+        "F:\\myStudy\\koa\\egg-blog\\package.json"
+      ],
+      "reconnectDelay": 10,
+      "heartbeatInterval": 60,
+      "reportInterval": 60
+    },
+    "env": "prod",
     "name": "egg-blog",
     "keys": "<String len: 3>",
     "proxy": false,
@@ -220,14 +232,19 @@
       "main": "index.js",
       "scripts": {
         "dev": "egg-bin dev",
+        "start": "egg-scripts start --daemon --port=7002 --env=prod --title=egg-server-blog",
+        "stop": "egg-scripts stop --title=egg-server-blog",
+        "migrate:up": "npx sequelize db:migrate --env=prod",
         "test": "echo \"Error: no test specified\" && exit 1"
       },
       "author": "",
       "license": "ISC",
       "dependencies": {
         "egg": "^2.20.2",
+        "egg-alinode": "^2.0.1",
         "egg-bin": "^4.12.1",
         "egg-cors": "^2.2.0",
+        "egg-scripts": "^2.11.0",
         "egg-sequelize": "^4.3.1",
         "egg-view-nunjucks": "^2.2.0",
         "moment": "^2.24.0",
@@ -235,9 +252,9 @@
         "sequelize-cli": "^5.4.0"
       }
     },
-    "baseDir": "F:\\myStudy\\koa\\egg-example2",
+    "baseDir": "F:\\myStudy\\koa\\egg-blog",
     "HOME": "C:\\Users\\UD",
-    "rundir": "F:\\myStudy\\koa\\egg-example2\\run",
+    "rundir": "F:\\myStudy\\koa\\egg-blog\\run",
     "dump": {
       "ignore": "<Set>"
     },
@@ -249,7 +266,7 @@
       "httpClient": "httpclient"
     },
     "notfound": {
-      "pageUrl": "/404.html"
+      "pageUrl": ""
     },
     "siteFile": {
       "/favicon.ico": "<Buffer len: 6463>"
@@ -268,21 +285,19 @@
       "returnRawBody": true
     },
     "logger": {
-      "dir": "F:\\myStudy\\koa\\egg-example2\\logs\\egg-blog",
+      "dir": "C:\\Users\\UD\\logs\\egg-blog",
       "encoding": "utf8",
-      "env": "local",
+      "env": "prod",
       "level": "INFO",
       "consoleLevel": "INFO",
-      "disableConsoleAfterReady": false,
+      "disableConsoleAfterReady": true,
       "outputJSON": false,
       "buffer": true,
       "appLogName": "egg-blog-web.log",
       "coreLogName": "egg-web.log",
       "agentLogName": "egg-agent.log",
       "errorLogName": "common-error.log",
-      "coreLogger": {
-        "consoleLevel": "WARN"
-      },
+      "coreLogger": {},
       "allowDebugAtProd": false,
       "type": "application"
     },
@@ -320,8 +335,7 @@
       "overrideMethod",
       "session",
       "securities",
-      "i18n",
-      "eggLoaderTrace"
+      "i18n"
     ],
     "workerStartTimeout": 600000,
     "serverTimeout": null,
@@ -347,6 +361,7 @@
     ],
     "robot": {
       "ua": [
+        {},
         {}
       ]
     },
@@ -374,8 +389,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\plugin.js",
-      "path": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-session",
+      "from": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-session",
       "version": "3.1.0"
     },
     "security": {
@@ -387,8 +402,8 @@
         "session"
       ],
       "env": [],
-      "from": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\plugin.js",
-      "path": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-security",
+      "from": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-security",
       "version": "2.5.0"
     },
     "jsonp": {
@@ -400,8 +415,8 @@
         "security"
       ],
       "env": [],
-      "from": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\plugin.js",
-      "path": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-jsonp",
+      "from": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-jsonp",
       "version": "2.0.0"
     },
     "onerror": {
@@ -413,8 +428,8 @@
         "jsonp"
       ],
       "env": [],
-      "from": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\plugin.js",
-      "path": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-onerror",
+      "from": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-onerror",
       "version": "2.1.0"
     },
     "i18n": {
@@ -424,8 +439,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\plugin.js",
-      "path": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-i18n",
+      "from": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-i18n",
       "version": "2.0.0"
     },
     "watcher": {
@@ -435,8 +450,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\plugin.js",
-      "path": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-watcher",
+      "from": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-watcher",
       "version": "3.1.0"
     },
     "schedule": {
@@ -446,8 +461,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\plugin.js",
-      "path": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-schedule",
+      "from": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-schedule",
       "version": "3.6.1"
     },
     "multipart": {
@@ -459,24 +474,9 @@
         "schedule"
       ],
       "env": [],
-      "from": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\plugin.js",
-      "path": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-multipart",
+      "from": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-multipart",
       "version": "2.4.0"
-    },
-    "development": {
-      "enable": true,
-      "package": "egg-development",
-      "name": "development",
-      "dependencies": [
-        "watcher"
-      ],
-      "optionalDependencies": [],
-      "env": [
-        "local"
-      ],
-      "from": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\plugin.js",
-      "path": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-development",
-      "version": "2.4.2"
     },
     "logrotator": {
       "enable": true,
@@ -487,8 +487,8 @@
       ],
       "optionalDependencies": [],
       "env": [],
-      "from": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\plugin.js",
-      "path": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-logrotator",
+      "from": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-logrotator",
       "version": "3.0.7"
     },
     "static": {
@@ -498,8 +498,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\plugin.js",
-      "path": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-static",
+      "from": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-static",
       "version": "2.2.0"
     },
     "view": {
@@ -509,8 +509,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg\\config\\plugin.js",
-      "path": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-view",
+      "from": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-view",
       "version": "2.1.2"
     },
     "nunjucks": {
@@ -523,8 +523,8 @@
       ],
       "optionalDependencies": [],
       "env": [],
-      "from": "F:\\myStudy\\koa\\egg-example2\\config\\plugin.js",
-      "path": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-view-nunjucks",
+      "from": "F:\\myStudy\\koa\\egg-blog\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-view-nunjucks",
       "version": "2.2.0"
     },
     "sequelize": {
@@ -534,8 +534,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "F:\\myStudy\\koa\\egg-example2\\config\\plugin.js",
-      "path": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-sequelize",
+      "from": "F:\\myStudy\\koa\\egg-blog\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-sequelize",
       "version": "4.3.1"
     },
     "cors": {
@@ -545,9 +545,20 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "F:\\myStudy\\koa\\egg-example2\\config\\plugin.js",
-      "path": "F:\\myStudy\\koa\\egg-example2\\node_modules\\egg-cors",
+      "from": "F:\\myStudy\\koa\\egg-blog\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-cors",
       "version": "2.2.0"
+    },
+    "alinode": {
+      "enable": true,
+      "package": "egg-alinode",
+      "name": "alinode",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\myStudy\\koa\\egg-blog\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-alinode",
+      "version": "2.0.1"
     }
   }
 }

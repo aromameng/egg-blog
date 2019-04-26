@@ -50,12 +50,19 @@ exports.cors = {
   package: 'egg-cors',
 };
 
+exports.alinode = {
+  // 从 `Node.js 性能平台` 获取对应的接入参数
+  enable: true,
+  appid: '79200',
+  secret: '740a6ae89b1efa5f91129e4198eef63476916078',
+};
+
 // exports.schedule = {
 //   // 每 10 秒执行一次
 //   interval: '20s',
 // }
 
 // 错误页面
-exports.notfound = {
-    pageUrl: '/404.html',
-}
+// exports.notfound = {
+//     pageUrl: '/404.html',
+// }
