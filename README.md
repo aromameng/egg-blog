@@ -45,6 +45,7 @@ npm run dev
 
 # 生产环境
 npm run start
+# 停止服务
 npm run stop
 ```
 
