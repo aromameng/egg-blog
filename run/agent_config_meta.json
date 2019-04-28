@@ -6,7 +6,7 @@
       ".tpl": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js"
     },
     "root": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-view\\config\\config.default.js",
-    "cache": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-view\\config\\config.default.js",
+    "cache": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-view\\config\\config.local.js",
     "defaultExtension": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-view\\config\\config.default.js"
   },
   "news": {
@@ -15,7 +15,7 @@
   },
   "middleware": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js",
   "robot": {
-    "ua": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js"
+    "ua": "F:\\myStudy\\koa\\egg-blog\\config\\config.local.js"
   },
   "security": {
     "csrf": {
@@ -36,7 +36,7 @@
       "value": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-security\\config\\config.default.js"
     },
     "hsts": {
-      "enable": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-security\\config\\config.default.js",
+      "enable": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-security\\config\\config.local.js",
       "maxAge": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-security\\config\\config.default.js",
       "includeSubdomains": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-security\\config\\config.default.js"
     },
@@ -70,16 +70,16 @@
     }
   },
   "sequelize": {
-    "dialect": "F:\\myStudy\\koa\\egg-blog\\config\\config.prod.js",
+    "dialect": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js",
     "dialectOptions": {
-      "charset": "F:\\myStudy\\koa\\egg-blog\\config\\config.prod.js"
+      "charset": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js"
     },
-    "database": "F:\\myStudy\\koa\\egg-blog\\config\\config.prod.js",
-    "host": "F:\\myStudy\\koa\\egg-blog\\config\\config.prod.js",
-    "port": "F:\\myStudy\\koa\\egg-blog\\config\\config.prod.js",
-    "username": "F:\\myStudy\\koa\\egg-blog\\config\\config.prod.js",
-    "password": "F:\\myStudy\\koa\\egg-blog\\config\\config.prod.js",
-    "timezone": "F:\\myStudy\\koa\\egg-blog\\config\\config.prod.js"
+    "database": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js",
+    "host": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js",
+    "port": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js",
+    "username": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js",
+    "password": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js",
+    "timezone": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js"
   },
   "cors": {
     "enable": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js",
@@ -98,9 +98,26 @@
     "heartbeatInterval": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-alinode\\config\\config.default.js",
     "reportInterval": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-alinode\\config\\config.default.js"
   },
+  "passportGithub": {
+    "key": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js",
+    "secret": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js",
+    "callbackURL": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-passport-github\\config\\config.default.js"
+  },
+  "redis": {
+    "client": {
+      "host": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js",
+      "port": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js",
+      "password": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js",
+      "db": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js"
+    },
+    "agent": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js",
+    "default": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-redis\\config\\config.default.js",
+    "app": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-redis\\config\\config.default.js",
+    "supportTimeCommand": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-redis\\config\\config.default.js"
+  },
   "session": {
+    "key": "F:\\myStudy\\koa\\egg-blog\\config\\config.default.js",
     "maxAge": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-session\\config\\config.default.js",
-    "key": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-session\\config\\config.default.js",
     "httpOnly": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-session\\config\\config.default.js",
     "encrypt": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-session\\config\\config.default.js"
   },
@@ -125,7 +142,7 @@
     "cookieMaxAge": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-i18n\\config\\config.default.js"
   },
   "watcher": {
-    "type": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-watcher\\config\\config.default.js",
+    "type": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-watcher\\config\\config.local.js",
     "eventSources": {
       "default": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-watcher\\config\\config.default.js",
       "development": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-watcher\\config\\config.default.js"
@@ -156,6 +173,13 @@
       "cron": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-multipart\\config\\config.default.js"
     }
   },
+  "development": {
+    "watchDirs": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-development\\config\\config.default.js",
+    "ignoreDirs": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-development\\config\\config.default.js",
+    "fastReady": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-development\\config\\config.default.js",
+    "reloadOnDebug": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-development\\config\\config.default.js",
+    "overrideDefault": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-development\\config\\config.default.js"
+  },
   "logrotator": {
     "filesRotateByHour": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-logrotator\\config\\config.default.js",
     "hourDelimiter": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-logrotator\\config\\config.default.js",
@@ -170,16 +194,18 @@
     "dir": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-static\\config\\config.default.js",
     "dynamic": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-static\\config\\config.default.js",
     "preload": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-static\\config\\config.default.js",
-    "buffer": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-static\\config\\config.prod.js",
-    "maxFiles": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-static\\config\\config.default.js",
-    "maxAge": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-static\\config\\config.prod.js"
+    "buffer": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-static\\config\\config.default.js",
+    "maxFiles": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-static\\config\\config.default.js"
   },
   "nunjucks": {
     "autoescape": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-view-nunjucks\\config\\config.default.js",
     "throwOnUndefined": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-view-nunjucks\\config\\config.default.js",
     "trimBlocks": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-view-nunjucks\\config\\config.default.js",
     "lstripBlocks": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-view-nunjucks\\config\\config.default.js",
-    "cache": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-view-nunjucks\\config\\config.default.js"
+    "cache": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-view-nunjucks\\config\\config.local.js"
+  },
+  "sessionRedis": {
+    "name": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-session-redis\\config\\config.default.js"
   },
   "env": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
   "name": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
@@ -206,8 +232,13 @@
       "egg-alinode": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
       "egg-bin": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
       "egg-cors": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
+      "egg-passport": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
+      "egg-passport-github": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
+      "egg-redis": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
       "egg-scripts": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
       "egg-sequelize": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
+      "egg-session": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
+      "egg-session-redis": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
       "egg-view-nunjucks": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
       "moment": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
       "mysql2": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
@@ -258,7 +289,9 @@
     "coreLogName": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
     "agentLogName": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
     "errorLogName": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
-    "coreLogger": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js",
+    "coreLogger": {
+      "consoleLevel": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.local.js"
+    },
     "allowDebugAtProd": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\config.default.js"
   },
   "httpclient": {

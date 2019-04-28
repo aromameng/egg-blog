@@ -2,7 +2,7 @@
   "config": {
     "session": {
       "maxAge": 86400000,
-      "key": "EGG_SESS",
+      "key": "my_session_key",
       "httpOnly": true,
       "encrypt": true
     },
@@ -85,7 +85,7 @@
       "cookieMaxAge": "1y"
     },
     "watcher": {
-      "type": "default",
+      "type": "development",
       "eventSources": {
         "default": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-watcher\\lib\\event-sources\\default",
         "development": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-watcher\\lib\\event-sources\\development"
@@ -116,6 +116,13 @@
         "cron": "0 30 4 * * *"
       }
     },
+    "development": {
+      "watchDirs": [],
+      "ignoreDirs": [],
+      "fastReady": false,
+      "reloadOnDebug": true,
+      "overrideDefault": false
+    },
     "logrotator": {
       "filesRotateByHour": null,
       "hourDelimiter": "-",
@@ -130,13 +137,12 @@
       "dir": "F:\\myStudy\\koa\\egg-blog\\app\\public",
       "dynamic": true,
       "preload": false,
-      "buffer": true,
-      "maxFiles": 1000,
-      "maxAge": 31536000
+      "buffer": false,
+      "maxFiles": 1000
     },
     "view": {
       "root": "F:\\myStudy\\koa\\egg-blog\\app\\view",
-      "cache": true,
+      "cache": false,
       "defaultExtension": ".html",
       "defaultViewEngine": "nunjucks",
       "mapping": {
@@ -148,11 +154,11 @@
       "throwOnUndefined": false,
       "trimBlocks": false,
       "lstripBlocks": false,
-      "cache": true
+      "cache": false
     },
     "sequelize": {
       "dialect": "mysql",
-      "database": "egg_db_production",
+      "database": "egg_db_development",
       "host": "localhost",
       "port": "3306",
       "username": "root",
@@ -172,10 +178,10 @@
       "appid": "79200",
       "secret": "<String len: 40>",
       "cmddir": "F:\\myStudy\\koa\\egg-blog\\node_modules\\commandx",
-      "logdir": "C:\\Users\\UD\\logs\\alinode",
+      "logdir": "F:\\myStudy\\koa\\egg-blog\\logs\\alinode",
       "error_log": [
-        "C:\\Users\\UD\\logs\\egg-blog\\common-error.log",
-        "C:\\Users\\UD\\logs\\stderr.log"
+        "F:\\myStudy\\koa\\egg-blog\\logs\\egg-blog\\common-error.log",
+        "F:\\myStudy\\koa\\egg-blog\\logs\\stderr.log"
       ],
       "packages": [
         "F:\\myStudy\\koa\\egg-blog\\package.json"
@@ -186,7 +192,27 @@
       "logger": "<EggLogger>",
       "libMode": true
     },
-    "env": "prod",
+    "passportGithub": {
+      "key": "8bf165c96b423771768d",
+      "secret": "<String len: 40>",
+      "callbackURL": "/passport/github/callback"
+    },
+    "redis": {
+      "default": {},
+      "app": true,
+      "agent": true,
+      "supportTimeCommand": true,
+      "client": {
+        "host": "127.0.0.1",
+        "port": "6379",
+        "password": "<String len: 0>",
+        "db": "0"
+      }
+    },
+    "sessionRedis": {
+      "name": ""
+    },
+    "env": "local",
     "name": "egg-blog",
     "keys": "<String len: 3>",
     "proxy": false,
@@ -212,8 +238,13 @@
         "egg-alinode": "^2.0.1",
         "egg-bin": "^4.12.1",
         "egg-cors": "^2.2.0",
+        "egg-passport": "^2.0.1",
+        "egg-passport-github": "^1.0.0",
+        "egg-redis": "^2.3.2",
         "egg-scripts": "^2.11.0",
         "egg-sequelize": "^4.3.1",
+        "egg-session": "^3.1.0",
+        "egg-session-redis": "^2.1.0",
         "egg-view-nunjucks": "^2.2.0",
         "moment": "^2.24.0",
         "mysql2": "^1.6.5",
@@ -252,19 +283,21 @@
       }
     },
     "logger": {
-      "dir": "C:\\Users\\UD\\logs\\egg-blog",
+      "dir": "F:\\myStudy\\koa\\egg-blog\\logs\\egg-blog",
       "encoding": "utf8",
-      "env": "prod",
+      "env": "local",
       "level": "INFO",
       "consoleLevel": "INFO",
-      "disableConsoleAfterReady": true,
+      "disableConsoleAfterReady": false,
       "outputJSON": false,
       "buffer": true,
       "appLogName": "egg-blog-web.log",
       "coreLogName": "egg-web.log",
       "agentLogName": "egg-agent.log",
       "errorLogName": "common-error.log",
-      "coreLogger": {},
+      "coreLogger": {
+        "consoleLevel": "WARN"
+      },
       "allowDebugAtProd": false,
       "type": "agent"
     },
@@ -323,7 +356,6 @@
     ],
     "robot": {
       "ua": [
-        {},
         {}
       ]
     },
@@ -428,6 +460,21 @@
       "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-multipart",
       "version": "2.4.0"
     },
+    "development": {
+      "enable": true,
+      "package": "egg-development",
+      "name": "development",
+      "dependencies": [
+        "watcher"
+      ],
+      "optionalDependencies": [],
+      "env": [
+        "local"
+      ],
+      "from": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-development",
+      "version": "2.4.2"
+    },
     "logrotator": {
       "enable": true,
       "package": "egg-logrotator",
@@ -509,6 +556,56 @@
       "from": "F:\\myStudy\\koa\\egg-blog\\config\\plugin.js",
       "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-alinode",
       "version": "2.0.1"
+    },
+    "passport": {
+      "enable": true,
+      "package": "egg-passport",
+      "name": "passport",
+      "dependencies": [
+        "session"
+      ],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\myStudy\\koa\\egg-blog\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-passport",
+      "version": "2.0.1"
+    },
+    "passportGithub": {
+      "enable": true,
+      "package": "egg-passport-github",
+      "name": "passportGithub",
+      "dependencies": [
+        "passport"
+      ],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\myStudy\\koa\\egg-blog\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-passport-github",
+      "version": "1.0.0"
+    },
+    "redis": {
+      "enable": true,
+      "package": "egg-redis",
+      "name": "redis",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\myStudy\\koa\\egg-blog\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-redis",
+      "version": "2.3.2"
+    },
+    "sessionRedis": {
+      "enable": true,
+      "package": "egg-session-redis",
+      "name": "sessionRedis",
+      "dependencies": [
+        "redis"
+      ],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\myStudy\\koa\\egg-blog\\config\\plugin.js",
+      "path": "F:\\myStudy\\koa\\egg-blog\\node_modules\\egg-session-redis",
+      "version": "2.1.0"
     }
   }
 }

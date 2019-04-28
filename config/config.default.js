@@ -57,6 +57,27 @@ exports.alinode = {
   secret: '740a6ae89b1efa5f91129e4198eef63476916078',
 };
 
+exports.passportGithub = {
+  key: '8bf165c96b423771768d',
+  secret: '6e6dc8b9eb37ea21375a2ed5d0b65266d6efb132',
+  // callbackURL: '/passport/github/callback',
+  // proxy: false,
+};
+
+exports.redis = {
+  client: {
+    host: '127.0.0.1',
+    port: '6379',
+    password: '',
+    db: '0',
+  },
+  agent:true
+};
+
+exports.session = {
+    key: 'my_session_key',
+};
+
 // exports.schedule = {
 //   // 每 10 秒执行一次
 //   interval: '20s',

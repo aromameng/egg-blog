@@ -17,3 +17,23 @@ exports.alinode = {
   enable: true,
   package: 'egg-alinode',
 };
+
+exports.passport = {
+  enable: true,
+  package: 'egg-passport',
+};
+
+exports.passportGithub = {
+  enable: true,
+  package: 'egg-passport-github',
+};
+
+exports.sessionRedis = {
+  enable: true,
+  package: 'egg-session-redis',
+};
+
+exports.redis = {
+  enable: true,
+  package: 'egg-redis',
+};

@@ -38,6 +38,9 @@ npx sequelize db:migrate
 # 可以通过 `db:migrate:undo:all` 回退到初始状态
 # npx sequelize db:migrate:undo:all
 ```
+##### redis 安装
+https://github.com/MicrosoftArchive/redis/releases 
+
 ### 运行
 ```
 # 开发
@@ -51,5 +54,6 @@ npm run stop
 
 ### 参考文档
 - [egg中文教程](https://eggjs.org/zh-cn/tutorials/index.html)
-- [Sequelize](https://eggjs.org/zh-cn/tutorials/sequelize.html)
 - [nunjucks官方文档](https://mozilla.github.io/nunjucks/cn/getting-started.html)
+- [Sequelize](http://docs.sequelizejs.com)
+- [Sequelize Docs 中文版](https://demopark.github.io/sequelize-docs-Zh-CN/)
