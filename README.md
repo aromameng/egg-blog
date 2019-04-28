@@ -38,6 +38,16 @@ npx sequelize db:migrate
 # 可以通过 `db:migrate:undo:all` 回退到初始状态
 # npx sequelize db:migrate:undo:all
 ```
+### 运行
+```
+# 开发
+npm run dev
+
+# 生产环境
+npm run start
+npm run stop
+```
+
 ### 参考文档
 - [egg中文教程](https://eggjs.org/zh-cn/tutorials/index.html)
 - [Sequelize](https://eggjs.org/zh-cn/tutorials/sequelize.html)
